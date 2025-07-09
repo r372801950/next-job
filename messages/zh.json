@@ -2,5 +2,47 @@
   "HomePage": {
     "title": "你好，世界！",
     "about": "前往关于页面"
+  },
+  "Header": {
+    "navigation": {
+      "job": "职位",
+      "talent": "人才",
+      "investment": "投资", 
+      "information": "资讯"
+    },
+    "auth": {
+      "signIn": "登录",
+      "signUp": "注册"
+    },
+    "language": "EN / 中"
+  },
+  "Footer": {
+    "brand": "Get Jobs",
+    "slogan": "GETJOBs 为 Web 3.0 开辟新路径",
+    "aboutUs": {
+      "title": "关于我们",
+      "about": "关于我们",
+      "contact": "联系我们",
+      "join": "加入我们"
+    },
+    "jobApplication": {
+      "title": "求职申请",
+      "postResume": "发布简历",
+      "findJob": "找工作",
+      "findCompany": "找公司"
+    },
+    "recruitment": {
+      "title": "招聘",
+      "postJob": "发布职位",
+      "hireDev": "招聘 Web3 开发者"
+    }
+  },
+  "JobPage": {
+    "heroTitle1": "Get Jobs",
+    "heroTitle2": "开辟新路径",
+    "heroTitle3": "面向 Web 3.0"
+  },
+  "TalentPage": {
+    "heroTitle": "GetJob 为 Web3.0 提供最佳人才"
   }
 } 

@@ -17,7 +17,7 @@ export const GlowingBoxButton = forwardRef<HTMLButtonElement, GlowingBoxButtonPr
           .glowing-box {
             isolation: isolate;
             overflow: hidden;
-            border-radius: 999px;
+            border-radius: 8px;
             display: inline-block;
             position: relative;
           }
@@ -43,7 +43,7 @@ export const GlowingBoxButton = forwardRef<HTMLButtonElement, GlowingBoxButtonPr
           }
 
           .glowing-box-borders-masker {
-            border-radius: 999px;
+            border-radius: 8px;
             content: "";
             height: 100%;
             right: 0;
@@ -96,7 +96,7 @@ export const GlowingBoxButton = forwardRef<HTMLButtonElement, GlowingBoxButtonPr
             background: radial-gradient(107.5% 107.5% at 50% 215%, rgba(230, 76, 235, 0.24), rgba(230, 76, 235, 0)),
               rgba(130, 43, 133, 0.04);
             border: 1px solid rgba(230, 76, 235, 0.3);
-            border-radius: 999px;
+            border-radius: 8px;
             cursor: pointer;
             padding: 7px 24px;
             position: relative;

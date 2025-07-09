@@ -1,3 +1,17 @@
+clerk用户管理
+https://dashboard.clerk.com/
+
+ngrok配置本地3000端口
+ngrok http 3000
+https://01bd2a62dd4c.ngrok-free.app/
+
+配置步骤
+登录 Clerk 仪表板（dashboard.clerk.com）。
+导航到 Webhooks → Add Endpoint 或编辑现有端点。
+设置 URL 为：https://01bd2a62dd4c.ngrok-free.app/api/webhooks/clerk。
+订阅 user.created 事件。
+保存并复制 Signing Secret，更新 .env.local
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started

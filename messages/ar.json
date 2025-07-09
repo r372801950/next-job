@@ -2,5 +2,47 @@
   "HomePage": {
     "title": "مرحباً بالعالم!",
     "about": "انتقل إلى صفحة حول"
+  },
+  "Header": {
+    "navigation": {
+      "job": "الوظائف",
+      "talent": "المواهب",
+      "investment": "الاستثمار",
+      "information": "المعلومات"
+    },
+    "auth": {
+      "signIn": "تسجيل الدخول",
+      "signUp": "إنشاء حساب"
+    },
+    "language": "EN / 中"
+  },
+  "Footer": {
+    "brand": "Get Jobs",
+    "slogan": "نص تجريبي،\nGETJOBs يفتح طريقاً جديداً لـ Web 3.0",
+    "aboutUs": {
+      "title": "من نحن",
+      "about": "من نحن ←",
+      "contact": "اتصل بنا ←",
+      "join": "انضم إلينا ←"
+    },
+    "jobApplication": {
+      "title": "التقدم للوظائف",
+      "postResume": "نشر السيرة الذاتية ←",
+      "findJob": "البحث عن وظيفة ←",
+      "findCompany": "البحث عن شركة ←"
+    },
+    "recruitment": {
+      "title": "التوظيف",
+      "postJob": "نشر وظيفة ←",
+      "hireDev": "توظيف مطوري Web3 ←"
+    }
+  },
+  "JobPage": {
+    "heroTitle1": "Get Jobs",
+    "heroTitle2": "يمهد طرقًا جديدة",
+    "heroTitle3": "لعالم Web 3.0"
+  },
+  "TalentPage": {
+    "heroTitle": "GetJob يوفر أفضل المواهب لعالم Web3.0"
   }
 } 

@@ -2,5 +2,47 @@
   "HomePage": {
     "title": "Hello world!",
     "about": "Go to the about page"
+  },
+  "Header": {
+    "navigation": {
+      "job": "Job",
+      "talent": "Talent", 
+      "investment": "Investment",
+      "information": "Information"
+    },
+    "auth": {
+      "signIn": "Sign In",
+      "signUp": "Sign Up"
+    },
+    "language": "EN / 中"
+  },
+  "Footer": {
+    "brand": "Get Jobs",
+    "slogan": "Slogan placeholder,\nGETJOBs opens a new path for Web 3.0",
+    "aboutUs": {
+      "title": "About Us",
+      "about": "About Us",
+      "contact": "Contact Us",
+      "join": "Join us"
+    },
+    "jobApplication": {
+      "title": "Job application",
+      "postResume": "Post resume",
+      "findJob": "Find a job",
+      "findCompany": "Find a company"
+    },
+    "recruitment": {
+      "title": "Recruitment",
+      "postJob": "Post a job listing",
+      "hireDev": "Hire Web3 Developers"
+    }
+  },
+  "JobPage": {
+    "heroTitle1": "Get Jobs",
+    "heroTitle2": "Blazes New Trails",
+    "heroTitle3": "For Web 3.0"
+  },
+  "TalentPage": {
+    "heroTitle": "GetJob provides the best talents for Web3.0"
   }
 }
