@@ -80,7 +80,7 @@ export default function SignInPage({ searchParams }: { searchParams: { role?: st
             <div className="absolute inset-0">
               <SignIn
                 unsafeMetadata={{ role }}
-                afterSignUpUrl={role === 'jobseeker' ? '/jobseeker-dashboard' : '/recruiter-dashboard'}
+                // afterSignUpUrl={role === 'jobseeker' ? '/jobseeker-dashboard' : '/recruiter-dashboard'}
               />
             </div>
           </div>

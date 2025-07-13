@@ -3,7 +3,7 @@
 import { ArrowRightLeft, Briefcase, User } from 'lucide-react';
 import { SecondaryButton } from './secondary-button';
 import Link from 'next/link';
-import { SignInButton, SignUpButton, UserButton, SignedIn, SignedOut } from '@clerk/nextjs';
+import { UserButton, SignedIn, SignedOut } from '@clerk/nextjs';
 import { usePathname } from '@/i18n/navigation';
 import { useRouter } from 'next/navigation';
 import { ROLES, getFilteredNavLinks, type UserRole } from '@/lib/permissions';
@@ -20,6 +20,11 @@ interface HeaderTranslations {
     signIn: string;
     signUp: string;
   };
+  userMenu: {
+    profileSettings: string;
+    switchToTalent: string;
+    switchToCorporate: string;
+  };
   language: string;
 }
 
@@ -28,9 +33,10 @@ interface SiteHeaderProps {
   translations: HeaderTranslations;
   locale: string;
   role: UserRole;
+  userId?: string;
 }
 
-export function SiteHeader({ translations, locale, role }: SiteHeaderProps) {
+export function SiteHeader({ translations, locale, role, userId }: SiteHeaderProps) {
   const pathname = usePathname();
   const router = useRouter();
 
@@ -61,6 +67,31 @@ export function SiteHeader({ translations, locale, role }: SiteHeaderProps) {
   const getLanguageStyle = (langCode: string) =>
     `hidden sm:inline cursor-pointer transition-colors ${locale === langCode ? 'text-white' : 'text-gray-300 hover:text-white'
     }`;
+
+  const switchRole = async () => {
+    console.log('switchRole');
+    try {
+      const response = await fetch('/api/user/switch-role', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          userId,
+          newRole: ROLES.RECRUITER
+        }),
+      });
+
+      if (response.ok) {
+        console.log('Role switched successfully');
+        // 可以在这里添加成功提示或页面刷新
+      } else {
+        console.error('Failed to switch role');
+      }
+    } catch (error) {
+      console.error('Error switching role:', error);
+    }
+  }
 
   return (
     <header className="relative z-20 pt-5">
@@ -109,12 +140,19 @@ export function SiteHeader({ translations, locale, role }: SiteHeaderProps) {
             <div className='min-w-8 min-h-9'>{/* 防止CLS */}
               <SignedOut>
                 <div className="flex items-center space-x-2">
-                  <SignInButton mode="modal">
+                  {/* <SignInButton mode="modal">
                     <SecondaryButton size="sm">{translations.auth.signIn}</SecondaryButton>
                   </SignInButton>
                   <SignUpButton mode="modal">
                     <SecondaryButton size="sm">{translations.auth.signUp}</SecondaryButton>
-                  </SignUpButton>
+                  </SignUpButton> */}
+                  <Link href="/sign-in">
+                    <SecondaryButton size="sm">{translations.auth.signIn}</SecondaryButton>
+                  </Link>
+                  <Link href="/sign-up">
+                    <SecondaryButton size="sm">{translations.auth.signUp}</SecondaryButton>
+                  </Link>
+
                 </div>
               </SignedOut>
 
@@ -122,14 +160,14 @@ export function SiteHeader({ translations, locale, role }: SiteHeaderProps) {
                 <UserButton>
                   <UserButton.MenuItems>
                     <UserButton.Action
-                      label="Profile Settings"
+                      label={translations.userMenu.profileSettings}
                       labelIcon={<User size={16} strokeWidth={2.5} />}
                       onClick={() => router.push('/profile')}
                     />
                     <UserButton.Action
-                      label="Switch corporate account"
+                      label={role === ROLES.RECRUITER ? translations.userMenu.switchToTalent : translations.userMenu.switchToCorporate}
                       labelIcon={<ArrowRightLeft size={16} strokeWidth={1.8} />}
-                      onClick={() => alert('init chat')}
+                      onClick={() => switchRole()}
                     />
                   </UserButton.MenuItems>
                 </UserButton>

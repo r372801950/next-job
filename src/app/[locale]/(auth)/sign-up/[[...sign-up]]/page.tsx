@@ -85,7 +85,6 @@ export default async function SignUpPage({ searchParams }: { searchParams: { rol
             <div className="absolute inset-0">
               <SignUp
                 unsafeMetadata={{ role }}
-                afterSignUpUrl={role === 'jobseeker' ? '/jobseeker-dashboard' : '/recruiter-dashboard'}
               />
             </div>
           </div>
