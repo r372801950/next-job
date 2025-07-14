@@ -14,6 +14,11 @@
       "signIn": "登录",
       "signUp": "注册"
     },
+    "userMenu": {
+      "profileSettings": "个人设置",
+      "switchToTalent": "切换到求职者账户",
+      "switchToCorporate": "切换到招聘方账户"
+    },
     "language": "EN / 中"
   },
   "Footer": {

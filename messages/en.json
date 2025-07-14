@@ -14,6 +14,11 @@
       "signIn": "Sign In",
       "signUp": "Sign Up"
     },
+    "userMenu": {
+      "profileSettings": "Profile Settings",
+      "switchToTalent": "Switch to talent account",
+      "switchToCorporate": "Switch to corporate account"
+    },
     "language": "EN / 中"
   },
   "Footer": {

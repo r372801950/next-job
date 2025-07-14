@@ -9,13 +9,19 @@ const intlMiddleware = createMiddleware(routing);
 //   '/sign-up(.*)'
 // ])
 
+const isWebhookRoute = createRouteMatcher(['/api/webhooks/clerk']);
+
 const isProtectedRoute = createRouteMatcher([
   // 在这里添加需要保护的路由
   // 例如：'/dashboard(.*)', '/profile(.*)'
-  '/:locale/job(.*)',
+  // '/:locale/job(.*)',
 ]);
 
 export default clerkMiddleware(async (auth, req) => {
+  if (isWebhookRoute(req)) {
+    // 跳过国际化，直接返回
+    return;
+  }
   // if (!isPublicRoute(req)) {
   //   await auth.protect()
   // }

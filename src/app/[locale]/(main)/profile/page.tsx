@@ -22,7 +22,7 @@ export default function ResumePage() {
 
   return (
     <div className="bg-[#ffffff] min-h-screen font-sans relative">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <header className="border-b border-[#ebebeb]">
           <nav className="-mb-px flex space-x-6">
             {renderTab("My resume")}
