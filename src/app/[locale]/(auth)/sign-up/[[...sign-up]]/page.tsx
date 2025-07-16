@@ -2,9 +2,9 @@
 import { SignUp, ClerkLoading } from '@clerk/nextjs';
 import RoleToggle from '@/components/role-toggle';
 
-export default async function SignUpPage({ searchParams }: { searchParams: { role?: string } }) {
+export default async function SignUpPage({ searchParams }: { searchParams: Promise<{ role?: string }> }) {
 
-  const role = searchParams.role || 'jobseeker';
+  const role = (await searchParams).role || 'jobseeker';
   const validRoles = ['jobseeker', 'recruiter'];
 
   if (!validRoles.includes(role)) {
